@@ -1,0 +1,308 @@
+<!-- 普通，没加视频 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>相思相见知何日，此时此夜难为情</title>
+    <style>
+      *{
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    perspective: 1300px;
+}
+#videofilm {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    z-index: -1;
+  }
+  h1{
+    font-size: 36px;
+    color: #B1BCE6;
+    font-family: '楷体';
+  }
+.texttwo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    color: #5f27cd; 
+    background: linear-gradient(90deg, #450ae7, #d52439);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+.textone {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+    color: #5f27cd; 
+    background: linear-gradient(90deg, #450ae7, #d32020);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+ 
+}
+.textthree {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translateX(-50%);
+    color: #5f27cd; /* 备用纯色字体 */
+    background: linear-gradient(90deg, #450ae7, #da1616);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  .textfour {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translateX(-50%);
+    color: #5f27cd; /* 备用纯色字体 */
+    background: linear-gradient(90deg, #450ae7, #da1616);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+}
+:root {
+    --margin-top: 0;
+    --margin-left: 0;
+    --animation-duration: 0s;
+    --animation-delay: 0s;
+}
+div {
+    transform-style: preserve-3d;
+}
+.word-box,
+.word-box .word{
+position: absolute;
+animation: rotY 0s linear infinite;
+animation-duration: var(--animation-duration);
+animation-delay: var(--animation-delay);
+}
+.word-box{
+    margin-top: var(--margin-top);
+
+}
+.word-box .word{
+    margin-left: var(--margin-left);
+}
+.word-box .word {
+    animation-duration: reverse;
+}
+@keyframes rotY {
+    to{
+        transform: rotateY(360deg);
+    }
+    
+}
+video {
+    max-width: 100%;
+    max-height: 100%;
+    /* 确保视频在父元素中间显示 */
+    margin: auto;
+    display: block;
+}
+    </style>
+  </head>
+  <body>
+    <video id="videofilm" poster="img\微信图片_20240823214307.jpg" autoplay muted loop>
+      <source src="video\6076331-uhd_3840_2160_30fps.mp4" type="video/mp4">
+    </video>
+    <div class="textone">
+      <h1>燕衔春意送柔情</h1>
+    </div>
+    <div class="texttwo">
+      <h1>乐入心弦诉深情</h1>
+    </div>
+    <div class="textthree">
+      <h1></h1>
+    </div>
+    <div class="textfour">
+      <h1></h1>
+    </div>
+    <audio src="video/晴天.mp3" autoplay loop></audio>
+    
+    <div class="container"></div>
+    <script >
+      
+var words=[
+    '只愿妻心似我心',
+    '定不负相思意',
+    '当年明月在',
+    '曾照彩云归',
+    '归去来兮',
+    '真堪偕隐',
+    '画船听雨眠',
+    '愿为江水',
+    '与君重逢',
+    '一日不见兮',
+    '思之若狂',
+    '入我相思门',
+    '知我相思苦',
+    '有一位叫yhy的女孩',
+    '你是我人生中的一道彩虹',
+    '柳絮空缱绻',
+    '南风知不知',
+    '我见青山多妩媚',
+    '料青山见我也应如是',
+    '取次花丛懒回顾',
+    '半缘修道半缘君',
+    '三笑徒然当一痴',
+    '人生若只如初见',
+    '我余光中都是你',
+    '人生自是有情痴',
+    '此恨不关风与月',
+    '因为你，我多少适应了这个世界',
+    '春蚕到死丝方尽',
+    '蜡炬成灰泪始干',
+    '今夜何夕',
+    '见此良人',
+    '愿我如星君如月',
+    '夜夜流光相皎洁',
+    '情不所起',
+    '一往而深',
+    '玲珑骰子安红豆',
+    '入骨相思知不知',
+    '多情只有春庭月',
+    '尤为离人照落花',
+    '若有知音见采',
+    '不辞唱遍阳春',
+    '休言半纸无多重',
+    '万斛离愁尽耐担',
+    '夜月一帘幽梦',
+    '和光同尘',
+    '杳霭流玉',
+    '月落星沉',
+    '霞姿月韵',
+    '喜上眉梢',
+    '醉后不知天在水',
+    '满船星梦压星河',
+    '落花人独立',
+    '微雨燕双飞',
+    '掬水月在手',
+    '弄花香满衣',
+    '夜深忽梦少年事',
+    '唯梦闲人不梦君',
+    '垆边人似月',
+    '皓腕凝霜雪',
+    '众里嫣然通一顾',
+    '人间颜色如尘土',
+    '若非群玉山头见',
+    '会向瑶台月下逢',
+    '沉鱼落雁鸟惊喧',
+    '羞花闭月花愁颤',
+    '解释春风无限恨',
+    '沉香亭北倚阑干'
+];
+function randomNum(min,max){
+    var num = (Math.random()*(max-min+1)+min).toFixed(2);
+    return num;
+}
+function init(){
+    let container = document.querySelector('.container');
+    let f = document.createDocumentFragment();
+    words.forEach(w=>{
+    let word_box = document.createElement('div');
+    let word = document.createElement('div');
+        word.innerText = w;
+        word.classList.add('word');
+        word.style.color = 'HotPink';
+        word.style.fontFamily = '楷体';
+        word.style.fontSize = '20px'
+        word_box.classList.add('word-box');
+        word_box.style.setProperty("--margin-top",randomNum(-40,20)+'vh');
+        word_box.style.setProperty("--margin-left",randomNum(6,35)+'vw');
+        word_box.style.setProperty("--animation-duration",randomNum(8,20)+'s');
+        word_box.style.setProperty("--animation-delay",randomNum(-20,0)+'s');
+        
+        word_box.appendChild(word);
+        f.appendChild(word_box);
+        word.addEventListener('mouseover', function () {
+    this.style.color = 'Blue';});
+    word.addEventListener('mouseout', function () {
+        this.style.color = 'HotPink';});
+
+
+    })
+    container.appendChild(f);
+}
+window.addEventListener('load',init);
+let textone = document.querySelector('.textone').querySelector('h1');
+let texttwo = document.querySelector('.texttwo').querySelector('h1');
+let textthree = document.querySelector('.textthree').querySelector('h1');
+let textfour = document.querySelector('.textfour').querySelector('h1');
+setTimeout(function(){
+        textone.innerHTML = '这一生，我们来彼此守护';
+        texttwo.innerHTML = 'Forever';
+          // textone.style.color = '#E8F9FD';
+          // textone.style.fontFamily = '楷体'
+          // texttwo.style.color = '#E8F9FD';
+          // texttwo.style.fontFamily = '楷体'
+          // textthree.style.color = '#E8F9FD';
+          // textthree.style.fontFamily = '楷体'
+          textthree.innerHTML = '';
+      },6000)
+      setTimeout(function(){
+        textone.innerHTML = '我们携手同行';
+        texttwo.innerHTML = '用彼此的温柔度过四季 ❤️‍🔥';
+        textthree.innerHTML = 'Forever';
+        textfour.innerHTML = '';
+        
+      },12000)
+      setTimeout(function(){
+        textone.innerHTML = '我们永不分离💗';
+        texttwo.innerHTML = 'Forever';
+        textthree.innerHTML = '';
+      },18000)
+      // setTimeout(function(){
+      //   textone.innerHTML = '视频怪物即将出现';
+      //   texttwo.innerHTML = '请宝贝别忘点击屏幕哦';
+      //   textthree.innerHTML = '';
+       
+      // },23000)
+      setTimeout(function () {
+            // 获取要添加视频的div元素
+            var videoContainer = document.getElementById('videoContainer');
+
+            // 创建一个新的video元素
+            var video = document.createElement('video');
+            video.src = 'video/Glowing-Star-Girl-4096x2160.mp4'; // 这里替换成你实际的视频路径
+            video.controls = true; // 设置显示视频播放控制条
+            
+
+            // 将视频元素添加到div元素中
+            videoContainer.appendChild(video);
+
+            // 这里也可以继续清空textone元素的内容（如果有textone元素且需要这么做的话）
+            textone.innerHTML = '';
+
+        }, 25000);
+
+
+ 
+
+
+ 
+ 
+    </script>
+    
+    
+  </body>
+</html>
